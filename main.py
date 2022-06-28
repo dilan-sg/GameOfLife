@@ -14,6 +14,8 @@ rows = columns = 400
 cell_size = height // rows
 black = (0,0,0)
 white = (255,255,255)
+
+
 def draw_grid(window):
     window.fill((0,0,0))
     for row in range(rows):
