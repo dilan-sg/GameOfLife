@@ -1,16 +1,23 @@
-# This is a sample Python script.
+import pygame
+# RULES
+# 1 or 0 neighbours = die (solitude/underpopulation)
+# 2 or 3 neighbours = survive
+# 4 or more (>3) = die (overpopulation)
+# dead cell with ONLY 3 neighbours = live cell (reproduction)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# set up grid
+# allow user to draw on grid
+# run the program
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+width = height = 800
+rows = columns = 400
+cell_size = height // rows
+black = (0,0,0)
+white = (255,255,255)
+def draw_grid(window):
+    window.fill((0,0,0))
+    for row in range(rows):
+        for column in range(columns):
+            pygame.draw.rect(window, (255,255,255), (row * cell_size, column * cell_size, cell_size, cell_size))
+screen = pygame.display.set_mode((width, height))
+draw_grid(screen)
