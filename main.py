@@ -1,4 +1,5 @@
 import pygame
+
 # RULES
 # 1 or 0 neighbours = die (solitude/underpopulation)
 # 2 or 3 neighbours = survive
@@ -15,7 +16,6 @@ cell_size = height // rows
 black = (0,0,0)
 white = (255,255,255)
 
-
 def draw_grid(window):
     window.fill((0,0,0))
     for row in range(rows):
@@ -26,11 +26,14 @@ draw_grid(screen)
 '''
 black = (0, 0, 0)
 white = (255, 255, 255)
-width = height = 650
+width = 1000
+height = 600
 
 pygame.init()
 screen = pygame.display.set_mode((width, height))
 clock = pygame.time.Clock()
+pygame.display.set_caption('Game Of Life - Conway')
+
 def main() :
     #main event loop that checks for pressed buttons
     screen.fill(white)
@@ -47,7 +50,7 @@ def main() :
     pygame.quit()
 
 def draw_Grid() :
-    s_size = 10
+    s_size = 20
     for w in range(0, width, s_size) :
         for h in range(0, height, s_size) :
             rect = pygame.Rect(w, h, s_size, s_size)
